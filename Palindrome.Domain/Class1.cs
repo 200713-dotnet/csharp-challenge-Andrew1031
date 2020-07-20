@@ -12,13 +12,19 @@ namespace Palindrome.Domain
           }
             int firstIndex = 0;
             int secondIndex  = s.Length - 1;
-            char firstPointer = s.charAt(firstIndex);
-            char secondPointer = s.charAt(secondIndex);
 
             while (firstIndex < secondIndex)
             {
-              
+                if  (firstIndex < secondIndex && s.charAt(firstIndex) != s.charAt(secondIndex))
+                {
+                    return false;
+                }
+
+                firstIndex++;
+                secondIndex--;
             }
+
+            return true;
 
         }
     }
